@@ -148,8 +148,7 @@
         <div class="img-container">
             <div class="nombre-id-pokemon">
             {% if not pokemon == '' and not pokemon == 'error' %}
-            <font face="sans serif"><h2 >{{ pokemon.forms[0].name }} #{{ pokemon.id }}</h2>
-            </font>
+            <h2 >{{ pokemon.forms[0].name }} #{{ pokemon.id }}</h2>
             </div>
             <div class="pokemon-specs">
                 <img class="pokemon-img" src="{{ pokemon.sprites.front_default }}" />
