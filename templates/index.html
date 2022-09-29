@@ -124,12 +124,73 @@
     .poke-buscador {
         height: 100%;
         width: 100%;
-        
     }
 
-    .busca-tu-pokemon {
-        color: black;
-    }
+        .bg-fire {
+            background-color: red;
+            border-radius: .5em;
+        }
+        .bg-grass {
+            background-color: green;
+            border-radius: .5em;
+        }
+        .bg-poison {
+            background-color:blueviolet;
+            border-radius: .5em;
+        }
+        .bg-rock {
+            background-color: burlywood;
+            border-radius: .5em;
+        }
+        .bg-water {
+            background-color: blue;
+            border-radius: .5em;
+        }
+        .bg-ice {
+            background-color:deepskyblue;
+            border-radius: .5em;
+        }
+        .bg-ghost {
+            background-color:darkgrey;
+            border-radius: .5em;
+        }
+        .bg-electric {
+            background-color:gold;
+            border-radius: .5em;
+        }
+        .bg-fighting {
+            background-color:darkorange;
+            border-radius: .5em;
+        }
+        .bg-bug {
+            background-color: chartreuse;
+            border-radius: .5em;
+        }
+        .bg-steel {
+            background-color:silver;
+            border-radius: .5em;
+        }
+        .bg-ground {
+            background-color: bisque;
+            border-radius: .5em;
+        }
+        .bg-dragon {
+            background-color:rgb(82, 0, 121);
+            border-radius: .5em;
+        }  
+        .bg-flying {
+            background-color: beige;
+            border-radius: .5em;
+        }
+        .bg-psychic {
+            background-color:goldenrod;
+            border-radius: .5em;
+        }
+        .bg-fairy {
+            background-color: darkviolet;
+            border-radius: .5em;
+        }
+
 </style>
 {% endblock %}
 
@@ -156,7 +217,7 @@
                     <tbody>
                         <tr>
                             <td>Tipo</td>
-                            <td>{% for type in pokemon.types %}<span>{{ type.type.name }}</span> {% endfor %}</td>
+                            <td><font face="Bahn">{% for type in pokemon.types %}<span class="badge bg-{{ type.type.name }}">{{ type.type.name }}</span> {% endfor %}</font></td>
                         </tr>
                         <tr>
                             <td>Altura</td>
@@ -178,17 +239,14 @@
         <div class="poke-searcher">
             <div class="button-poke-searcher"></div>
             <div class="search-your-pokemon">
-                <font face="sans serif">
-                    <h1 class="busca-tu-pokemon"></h1>
                     <form action="/" method="GET">
-                    <input type="text" class="poke-buscador" name="pokemon">
+                    <input type="text" class="poke-buscador" name="pokemon" placeholder="Busca tu Pokemon">
                     <div class="pokebotones"> <button type="submit" class="button-pokebuscador">Buscar</button>
 
                         <a href="?pokemon=random" class="Aleatorio-pokebutton">
                             <p class="aleatorio">Aleatorio</p></a>
                     </form>
-                    </div>
-                </font>
+            </div>
             </div>
         </div>
     </div>
