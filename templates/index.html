@@ -103,6 +103,7 @@
         margin-left: 0px;
         background-color: #0d6efd;
         border-radius: .5em;
+        font-size: large;
     }
 
     .Aleatorio-pokebutton {
@@ -115,15 +116,18 @@
         display: flex;
         justify-content: center;
         border: gray solid 2px;
+        text-decoration: none;
     }
 
     .aleatorio {
         text-align: center;
+        color: black;
     }
 
     .poke-buscador {
         height: 100%;
         width: 100%;
+        margin-top: 7px;
     }
 
     .bg-fire {
@@ -262,7 +266,7 @@
         <div class="poke-searcher">
             <div class="search-your-pokemon">
                 <form action="/" method="GET">
-                    <input type="text" class="poke-buscador" name="pokemon" placeholder="Busca tu Pokemon">
+                    <input type="text" class="poke-buscador" name="pokemon" placeholder="Busca tu Pokemon" required>
                     <div class="pokebotones"> 
                         <button type="submit" class="button-pokebuscador">Buscar</button>
                         <a href="?pokemon=random" class="Aleatorio-pokebutton">
