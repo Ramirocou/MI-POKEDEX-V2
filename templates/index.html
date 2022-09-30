@@ -71,7 +71,7 @@
         margin-left: 10px;
     }
 
-    .img-container{
+    .img-container {
         border: 10px solid grey;
         width: 70%;
         height: 300px;
@@ -79,13 +79,13 @@
         background-color: blanchedalmond;
     }
 
-    .nombre-id-pokemon{
+    .nombre-id-pokemon {
         display: flex;
         justify-content: center;
     }
 
     .pokemon-specs {
-        margin-top: 20% ;
+        margin-top: 20%;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -93,7 +93,7 @@
     .pokemon-img {
         height: 100%;
         width: 100%;
-        
+
     }
 
     .button-pokebuscador {
@@ -126,75 +126,90 @@
         width: 100%;
     }
 
-        .bg-fire {
-            background-color: red;
-            border-radius: .5em;
-        }
-        .bg-grass {
-            background-color: green;
-            border-radius: .5em;
-        }
-        .bg-poison {
-            background-color:blueviolet;
-            border-radius: .5em;
-        }
-        .bg-rock {
-            background-color: rgb(49, 28, 0);
-            border-radius: .5em;
-        }
-        .bg-water {
-            background-color: rgb(0, 68, 255);
-            border-radius: .5em;
-        }
-        .bg-ice {
-            background-color:deepskyblue;
-            border-radius: .5em;
-        }
-        .bg-ghost {
-            background-color:rgb(64, 0, 83);
-            border-radius: .5em;
-        }
-        .bg-electric {
-            background-color:rgb(238, 255, 0);
-            border-radius: .5em;
-        }
-        .bg-fighting {
-            background-color:rgb(255, 38, 0);
-            border-radius: .5em;
-        }
-        .bg-bug {
-            background-color: chartreuse;
-            border-radius: .5em;
-        }
-        .bg-steel {
-            background-color:silver;
-            border-radius: .5em;
-        }
-        .bg-ground {
-            background-color: rgb(173, 95, 0);
-            border-radius: .5em;
-        }
-        .bg-dragon {
-            background-color:rgb(82, 0, 121);
-            border-radius: .5em;
-        }  
-        .bg-flying {
-            background-color: rgba(119, 211, 211, 0.808);
-            border-radius: .5em;
-        }
-        .bg-psychic {
-            background-color:rgb(255, 0, 140);
-            border-radius: .5em;
-        }
-        .bg-fairy {
-            background-color: rgb(224, 37, 215);
-            border-radius: .5em;
-        }
-        .bg-dark {
-            background-color: rgb(31, 8, 8);
-            border-radius: .5em;
-        }
+    .bg-fire {
+        background-color: red;
+        border-radius: .5em;
+    }
 
+    .bg-grass {
+        background-color: green;
+        border-radius: .5em;
+    }
+
+    .bg-poison {
+        background-color: blueviolet;
+        border-radius: .5em;
+    }
+
+    .bg-rock {
+        background-color: rgb(49, 28, 0);
+        border-radius: .5em;
+    }
+
+    .bg-water {
+        background-color: rgb(0, 68, 255);
+        border-radius: .5em;
+    }
+
+    .bg-ice {
+        background-color: deepskyblue;
+        border-radius: .5em;
+    }
+
+    .bg-ghost {
+        background-color: rgb(64, 0, 83);
+        border-radius: .5em;
+    }
+
+    .bg-electric {
+        background-color: rgb(238, 255, 0);
+        border-radius: .5em;
+    }
+
+    .bg-fighting {
+        background-color: rgb(255, 38, 0);
+        border-radius: .5em;
+    }
+
+    .bg-bug {
+        background-color: chartreuse;
+        border-radius: .5em;
+    }
+
+    .bg-steel {
+        background-color: silver;
+        border-radius: .5em;
+    }
+
+    .bg-ground {
+        background-color: rgb(173, 95, 0);
+        border-radius: .5em;
+    }
+
+    .bg-dragon {
+        background-color: rgb(82, 0, 121);
+        border-radius: .5em;
+    }
+
+    .bg-flying {
+        background-color: rgba(119, 211, 211, 0.808);
+        border-radius: .5em;
+    }
+
+    .bg-psychic {
+        background-color: rgb(255, 0, 140);
+        border-radius: .5em;
+    }
+
+    .bg-fairy {
+        background-color: rgb(224, 37, 215);
+        border-radius: .5em;
+    }
+
+    .bg-dark {
+        background-color: rgb(31, 8, 8);
+        border-radius: .5em;
+    }
 </style>
 {% endblock %}
 
@@ -211,9 +226,9 @@
             <div class="top-pokedex-4"></div>
         </div>
         <div class="img-container">
-            <div class="nombre-id-pokemon">
             {% if not pokemon == '' and not pokemon == 'error' %}
-            <h2 >{{ pokemon.forms[0].name }} #{{ pokemon.id }}</h2>
+            <div class="nombre-id-pokemon">
+                    <h2>{{ pokemon.forms[0].name }} #{{ pokemon.id }}</h2>
             </div>
             <div class="pokemon-specs">
                 <img class="pokemon-img" src="{{ pokemon.sprites.front_default }}" />
@@ -221,7 +236,11 @@
                     <tbody>
                         <tr>
                             <td>Tipo</td>
-                            <td><font face="Bahn">{% for type in pokemon.types %}<span class="badge bg-{{ type.type.name }}">{{ type.type.name }}</span> {% endfor %}</font></td>
+                            <td>
+                                <font face="Bahn">{% for type in pokemon.types %}<span
+                                        class="badge bg-{{ type.type.name }}">{{ type.type.name }}</span> {% endfor %}
+                                </font>
+                            </td>
                         </tr>
                         <tr>
                             <td>Altura</td>
@@ -231,26 +250,26 @@
                             <td>Peso</td>
                             <td>{{ pokemon.weight }}</td>
                         </tr>
-                        
-                        </tbody>
+
+                    </tbody>
                 </table>
-                
+
             </div>
             {% elif pokemon == 'error' %}
-                <h2>Error! pokemon no encontrado</h2>
+            <h2>Error! pokemon no encontrado</h2>
             {% endif %}
         </div>
         <div class="poke-searcher">
-            <div class="button-poke-searcher"></div>
             <div class="search-your-pokemon">
-                    <form action="/" method="GET">
+                <form action="/" method="GET">
                     <input type="text" class="poke-buscador" name="pokemon" placeholder="Busca tu Pokemon">
-                    <div class="pokebotones"> <button type="submit" class="button-pokebuscador">Buscar</button>
-
+                    <div class="pokebotones"> 
+                        <button type="submit" class="button-pokebuscador">Buscar</button>
                         <a href="?pokemon=random" class="Aleatorio-pokebutton">
-                            <p class="aleatorio">Aleatorio</p></a>
-                    </form>
-            </div>
+                            <p class="aleatorio">Aleatorio</p>
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
